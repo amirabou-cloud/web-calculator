@@ -13,26 +13,28 @@ h1 {
   font-size: 42px;
   margin-top: 20px;
 }
+body{
+    background-image: url(./images/download\ copy.png);
+  background: cover;
 
+}
 main {
   margin: 0px;
   display: flex;
   unicode-bidi: isolate;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
   min-height: 100vh;
 }
 /* header */
 
 .header-logo {
   font-family: "Arial", cursive;
-  color: whitesmoke;
+  color: #090909;
   font-size: 80px;
   text-align: center;
   padding: 20px 25px;
   margin: 0px;
-  background: linear-gradient(to right, #B7DDE2, #9AA3A8);
 }
 .container {
   display: flex;
@@ -41,34 +43,79 @@ main {
   height: 100%;
 }
 
-/* nav */
-nav {
-  position: sticky;
-  top: 0;
+/* Navigation */
+
+.menu-bar {
+background: rgba(0, 0, 0, 0.6);
+text-align: center;
+position: sticky;
 }
-.main-nav {
-  background: linear-gradient(to right, #B7DDE2, #a7cce0);
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: rgb(139, 241, 207);
 }
-.main-nav-link {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  padding: 10px 25px;
-  transition: all 0.5s;
+
+.menu-bar ul li{
+    width: auto;
+    margin: 10px;
+    padding: 10px;
 }
+.menu-bar ul li a{
+
+    text-decoration: none;
+    color: #f1b6c0;
+}
+.active, .menu-bar ul li a:hover{
+    background-color: #42e5d2;
+    border-radius: 5%;
+    padding: 10px 15px;
+}
+.menu-bar .fa{
+    margin-right: 8px;
+}
+.sub-menu1{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu1{
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+    margin-left: -10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+    width: auto;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+    border-bottom: none;
+
+}
+
+.menu-bar ul li:hover .sub-menu1 ul li:hover{
+    color: #c79de3;
+
+}
+
+.nav-link:hover {
+  color: #00d4ff;
+}
+
 @media (min-width: 900px) {
   .main-nav-link {
     font-size: 32px;
   }
-}
-.main-nav-link:hover {
-  color: var(--grey-dark);
 }
 
 /* calculator */
@@ -76,7 +123,7 @@ nav {
 #calculator {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 15px;
-  background-color: rgb(193, 223, 242);
+  background-color: rgb(39, 41, 43);
   max-width: 360px;
   overflow: hidden;
   padding: 1rem;
@@ -90,7 +137,7 @@ nav {
   resize: none;
   padding: 0.75rem;
   border: none;
-  background-color: rgb(150, 184, 204);
+  background-color: rgb(64, 68, 70);
   color: white;
   font-size: 1.2rem;
   line-height: 1.4rem;
@@ -113,7 +160,7 @@ button {
   height: 60px;
   border-radius: 50px;
   border: none;
-  background-color: rgb(150, 184, 204);
+  background-color: rgb(85, 92, 96);
   color: white;
   font-size: 2rem;
   front-weight: bold;
@@ -128,7 +175,7 @@ button:active {
 opacity: 90%;
 }
 .operator-btn {
-  background-color: rgb(84, 165, 206);
+  background-color: rgb(247, 140, 25);
 }
 .useful-btn {
   background-color: rgb(144, 201, 230);
@@ -156,9 +203,9 @@ opacity: 90%;
 
 /* Contact Section */
 .contact {
-  background: linear-gradient(to right, #B7DDE2, #9AA3A8);
-  color: white;
-  padding: 60px 20px;
+  background: linear-gradient(to right, #87e6c6, #25a1e3);
+  color: #2F3437;
+  padding: 60px 0px;
   text-align: center;
 }
 
@@ -168,7 +215,7 @@ opacity: 90%;
 }
 
 .contact-content {
-  max-width: 600px;
+  max-width: auto;
   margin: 0 auto;
 }
 
@@ -178,7 +225,7 @@ opacity: 90%;
 }
 .contact-btn {
   display: inline-block;
-  background-color: var(--duckegg);
+  background-color: #87e6c6;
   color: var(--grey-dark);
   padding: 0.8rem 2rem;
   border-radius: 4px;
@@ -193,11 +240,7 @@ opacity: 90%;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-}
-.footercontainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0, 20px;
+  margin-bottom: 20px;
 }
 
 /* Footer */
@@ -208,22 +251,16 @@ footer {
   padding: 2rem;
 }
 
+.footercontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px, 20px;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1rem;
     font-size: 0.9rem;
   }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}

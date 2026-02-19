@@ -1,122 +1,312 @@
-# TechNative-TFS
+📘 <span style="color:#3A8FB7">Project Overview</span>
 
-<h1 Project Overview>
+This project is a calculator web application developed entirely by myself.
 
-This project is a calculator web application developed by myself.
-My goal was to start with a basic calculator and progressively improve it by adding advanced scientific features, improving usability, and making the interface more robust.
-The project also helped me understand JavaScript logic, DOM manipulation, and how to debug and fix issues when adding new features.
+I began with a simple calculator and progressively improved it by adding scientific features, refining the logic, debugging complex issues, and making the interface responsive across devices.
 
-<h2 HTML>
+The goal was not only to build a working calculator but to deeply understand:
 
-Used to structure the calculator layout
-Buttons for numbers, operators, and scientific functions
-Display area for showing calculations and results
+JavaScript logic
 
-<h2 CSS>
+DOM manipulation
 
-Used to style the calculator
-Responsive layout so the calculator works on different devices
-Color palette based on duck-egg blue, blue, and grey
-Button sizing and spacing for better usability
+Expression parsing
 
-<h2 JavaScript>
+Debugging strategies
 
-Core logic of the calculator
-Handles button clicks and keyboard input
-Performs mathematical calculations
-Manages advanced features like trigonometry, memory, and percentages
-Updates and controls the display
+Responsive design
 
-<h1 Calculator Features>
+This project became a strong exercise in real-world problem solving.
 
-<h2 1 - Basic Calculator>
+🛠 <span style="color:#2F6F7E">Technologies Used</span>
+🧱 <span style="color:#3A8FB7">HTML</span>
+
+Structured the calculator layout
+
+Created buttons for numbers, operators, and scientific functions
+
+Built the display area for expressions and results
+
+🎨 <span style="color:#3A8FB7">CSS</span>
+
+Styled the calculator interface
+
+Designed a responsive layout
+
+Used a color palette based on duck-egg blue, blue, and grey
+
+Improved button sizing and spacing for usability
+
+📱 Mobile Compatibility Challenge
+
+The website was not initially compatible with phones.
+
+Issues included:
+
+Broken layout on small screens
+
+Misaligned buttons
+
+Poor touch usability
+
+Display scaling problems
+
+To fix this, I:
+
+Implemented media queries
+
+Adjusted button sizes for touch devices
+
+Improved spacing and alignment
+
+Ensured the display resized correctly
+
+The calculator is now responsive and works across different screen sizes.
+
+⚙️ <span style="color:#3A8FB7">JavaScript</span>
+
+JavaScript powers the core functionality:
+
+Handles button clicks
+
+Processes keyboard input
+
+Performs calculations
+
+Manages scientific functions
+
+Controls and updates the display
+
+Handles edge cases and error prevention
+
+This is where most development challenges occurred.
+
+🧮 <span style="color:#2F6F7E">Calculator Features</span>
+➕ <span style="color:#3A8FB7">Basic Calculator</span>
 
 Addition (+)
+
 Subtraction (−)
+
 Multiplication (×)
+
 Division (÷)
+
 Clear (C / AC)
+
 Backspace (⌫)
+
 Parentheses ( )
 
-<h2 2 - Advanced / Scientific Features>
+🔬 <span style="color:#3A8FB7">Scientific Features</span>
 
-π (Pi) button
-sin, cos, tan (trigonometric functions, using degrees)
-x² (square) and x³ (cube)
-± (plus/minus) sign toggle
-% (percentage) button
+π (Pi)
 
-Memory functions:
-MC (Memory Clear)
-MR (Memory Recall)
-M+ (Add to memory)
-M− (Subtract from memory)
+sin, cos, tan (degrees)
 
-<h1 Development Process & Challenges>
+x² (square)
 
-<h2 1- Simple Calculator>
+x³ (cube)
 
-I initially built a basic calculator that could:
+± (plus/minus toggle)
 
-- Display numbers
-- Perform simple arithmetic operations
-- Calculate results correctly
+% (percentage)
 
-<h2 2 - Adding Advanced Buttons>
+🚧 <span style="color:#2F6F7E">Development Process & Challenges</span>
+🧩 <span style="color:#3A8FB7">1. Building the Basic Calculator</span>
 
-Once the basic calculator was working, I added:
+Initially, I implemented:
 
-- π, sin, cos, tan
-- Square and cube
-- Memory buttons
+Number display
 
-During this step, the calculator broke multiple times due to:
+Basic arithmetic
 
-- Incorrect display updates
-- JavaScript errors stopping execution
-- Conflicts between new functions and existing logic
+Expression evaluation
 
-I fixed these issues by:
+The logic worked correctly but was simple and linear.
 
-- Debugging JavaScript errors
-- Correcting DOM references
-- Ensuring each function handled only the last number in the display
+🔄 <span style="color:#3A8FB7">2. Adding Scientific Functions</span>
 
-<h2 3 - Display Problem with Large Numbers>
-When calculations became large, the single-line display could no longer show the full expression or result.
+After the basic version worked, I added:
 
-<h1 Solution>
+π
 
-Replaced the single-line <input> with a multi-line display (<textarea>)
-Enabled text wrapping and scrolling
-Automatically scrolled to the bottom so the latest result is always visible
+sin, cos, tan
 
-This change initially caused the display to stop working, but after debugging:
+Square and cube
 
-I fixed incorrect display references
-Ensured .value was used correctly
-Restored full calculator functionality
+This caused multiple issues:
 
-<h1 Final Result>
+Display stopped updating correctly
 
-<h2 The final calculator:>
+Functions applied to the entire expression instead of the last number
+
+JavaScript execution errors
+
+To resolve this:
+
+I used console debugging
+
+Reworked how expressions were stored as strings
+
+Ensured functions applied only to the last operand
+
+Fixed incorrect DOM references
+
+This required restructuring logic instead of quick fixes.
+
+📊 <span style="color:#3A8FB7">3. Percentage Calculation — Major Challenge</span>
+
+The percentage (%) feature was the most difficult part of the project.
+
+❌ Initial Problems
+
+When adding or subtracting percentages:
+
+100 + 10%
+
+200 − 15%
+
+The calculator produced incorrect results.
+
+The main issues:
+
+Treating % as simple division by 100
+
+Not referencing the previous operand
+
+Incorrect formula logic
+
+Breaking chained operations
+
+Decimal handling errors
+
+🧠 The Logical Problem
+
+Percentage behavior depends on the operator used.
+
+Correct formulas:
+
+Addition
+
+A + B% = A + (A × B / 100)
+
+Subtraction
+
+A − B% = A − (A × B / 100)
+
+My mistake was:
+
+Not properly extracting the previous operand
+
+Not detecting which operator was active
+
+Not recalculating percentage relative to that operand
+
+🔁 Multiple Rewrites
+
+I had to rewrite the percentage logic several times.
+
+Every time I fixed one issue, another edge case appeared:
+
+Multiple chained operations
+
+Decimal percentages
+
+Percent after multiplication
+
+Percent after division
+
+Parentheses interactions
+
+± toggle with percentages
+
+This forced me to:
+
+Rethink expression parsing
+
+Improve operand extraction logic
+
+Carefully test edge cases
+
+This was the most educational part of the entire project.
+
+🖥 <span style="color:#3A8FB7">4. Display Problem with Large Numbers</span>
+
+Originally, I used a single-line <input>.
+
+Problems:
+
+Long expressions overflowed
+
+Large numbers were cut off
+
+Hard to track full calculations
+
+✅ <span style="color:#2F6F7E">Solution</span>
+
+I replaced the <input> with a multi-line <textarea>:
+
+Enabled text wrapping
+
+Added scrolling
+
+Automatically scrolled to the bottom
+
+Preserved full expression visibility
+
+Initially, this broke the display because:
+
+Old DOM references were still used
+
+.value was not updating correctly
+
+Functions targeted incorrect elements
+
+After debugging and fixing references, full functionality returned.
+
+🎯 <span style="color:#2F6F7E">Final Result</span>
+
+The final calculator:
+
 Supports basic and scientific calculations
-Can display very large numbers and long expressions
-Works across different screen sizes
-Demonstrates problem-solving, debugging, and progressive enhancement
 
-<h1 What I Learned>
+Correctly handles percentage logic
 
-How to manipulate the DOM with JavaScript
-How calculator logic works internally
-How small changes can break functionality
-How to debug step by step instead of rewriting everything
+Displays large numbers and long expressions
 
-<h1 Future Improvements>
+Works on desktop and mobile devices
 
-DEG / RAD mode toggle
+Demonstrates structured debugging and progressive enhancement
+
+📚 <span style="color:#2F6F7E">What I Learned</span>
+
+DOM manipulation with JavaScript
+
+Expression parsing logic
+
+Why percentage calculations are more complex than expected
+
+The importance of testing edge cases
+
+How small logic changes break large systems
+
+Step-by-step debugging instead of rewriting everything
+
+How to make a web app responsive
+
+🚀 <span style="color:#2F6F7E">Future Improvements</span>
+
+DEG / RAD toggle
+
 Calculation history panel
-Keyboard-only support
-Improved error handling (e.g., invalid expressions)
+
+Full keyboard-only support
+
+Better error handling (invalid expressions, divide by zero)
+
 Accessibility improvements
+
+Refactoring into modular logic structure
+
+✨ This project represents more than a calculator — it reflects growth in debugging, logical thinking, and building resilient front-end applications.

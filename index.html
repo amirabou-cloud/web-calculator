@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
   <header class="header-logo">
     <h1>My Calculator</h1>
   </header>
-      <nav>
-      <ul class="main-nav">
-        <li class="main-nav-item">
-          <a class="main-nav-link" href="http://127.0.0.1:5502/portfolio.html#home">My Portfolio</a>
+      <div class="menu-bar">
+        <ul>
+          <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="#"><i class="fa fa-info"></i>About</a></li>
+          <li><a href="#"><i class="fa fa-clone"></i>Projects</a>
+          <div class="sub-menu1">
+            <ul>
+                <li><a href="#">Calculator</a></li>
+                <li><a href="#">Weather App</a></li>
+                <li><a href="#">List to do</a></li>
+          </ul>
+          </div>
         </li>
-        <li class="main-nav-item">
-          <a class="main-nav-link" href="file:///Users/amiraboughanmi/Documents/TechNative/circumference/index.html">Circumference Calculator</a>
-        </li>
-        <li class="main-nav-item">
-          <a class="main-nav-link" href="#timer">Timer</a>
-        </li>
-      </ul>
-    </nav>
+          <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+        </ul>
+        </div>
   <main>
     <div class="container">
     <div id="calculator">
@@ -55,10 +59,10 @@
         <button onclick="toggleSign()">±</button>
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
-        <button onclick="calculate()">=</button>
+        <button onclick="calculate()"class="operator-btn">=</button>
     </div>
     </div>
-    <script src="interaction.js"></script>
+    <script src="script.js"></script>
   </main>
     <div id="contact" class="contact">
       <div class="footercontainer">
@@ -66,12 +70,11 @@
         <p>
 I am interested in opportunities as a software engineer where I can contribute to building reliable, scalable applications while continuing to grow my technical skills.
         </p></br></br>
-        <div class="contact-links">
-          <a href="https://github.com/amirabou-cloud" class="contact-btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/amira-boughanmi-83464b1b/" class="contact-btn">LinkedIn</a>
-          <a href="mailto:amiraboughanmi@icloud.com" class="contact-btn">Email</a>
+<div class="contact-links">
+          <a href="https://github.com/amirabou-cloud" class="contact-btn"><i class="fa fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/amira-boughanmi-83464b1b/" class="contact-btn"><i class="fa fa-linkedin"></i> LinkedIn</a>
+          <a href="mailto:amiraboughanmi@icloud.com" class="contact-btn"><i class="fa fa-at"></i> Email</a>
         </div>
-      </div>
     </div>
 
     <footer>
